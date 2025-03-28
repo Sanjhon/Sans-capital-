@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sans Capital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="fade-in">Sans Capital</h1>
+        <p class="fade-in">Portofolio Investasi Kripto Anda</p>
+    </header>
+
+    <section id="portfolio">
+        <h2 class="slide-in">Portofolio</h2>
+        <div class="card">
+            <h3>Bitcoin (BTC)</h3>
+            <p>Investasi utama dalam ekosistem kripto.</p>
+        </div>
+        <div class="card">
+            <h3>Altcoins</h3>
+            <p>Berbagai aset alternatif dengan potensi pertumbuhan.</p>
+        </div>
+    </section>
+
+    <section id="analysis">
+        <h2 class="slide-in">Analisis Pasar</h2>
+        <p class="fade-in">Insight dan strategi terbaru seputar dunia kripto.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Sans Capital. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 50px 0;
+}
+
+h1, h2 {
+    font-weight: bold;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Animasi */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".fade-in, .slide-in");
+    elements.forEach(el => {
+        setTimeout(() => {
+            el.style.animationDelay = "0.3s";
+        }, 500);
+    });
+});
